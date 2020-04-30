@@ -23,19 +23,19 @@ StopWDT     mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; Stop watchdog timer
 ;-------------------------------------------------------------------------------
 ; Main loop here
 ;-------------------------------------------------------------------------------
-PE4:		CLR		R5		;zerar R5
-			MOV		#4,R6	;Colocar numero 4 em R6
+PE4:		CLR	R5		;zerar R5
+		MOV	#4,R6		;Colocar numero 4 em R6
 
-LOOP:		CALL	#SUBROT	;Chamar subrotina "SUBROT"
-			DEC		R6		;Descrementar R6
-			JNZ		LOOP	;Se diferente de zero, ir para o LOOP
-			NOP				;Nenhuma operation
-			JMP		$		;Travar a execution em um loop infinito
-			NOP				;Nenhuma operation
+LOOP:		CALL	#SUBROT		;Chamar subrotina "SUBROT"
+		DEC	R6		;Descrementar R6
+		JNZ	LOOP		;Se diferente de zero, ir para o LOOP
+		NOP			;Nenhuma operation
+		JMP	$		;Travar a execution em um loop infinito
+		NOP			;Nenhuma operation
 
-SUBROT:		ADD		#1,R5	;Somar 1 em R5
-			ADD		#1,R5	;Somar 1 em R5
-			RET				;Retornar..
+SUBROT:		ADD	#1,R5		;Somar 1 em R5
+		ADD	#1,R5		;Somar 1 em R5
+		RET			;Retornar..
                                             
 
 ;-------------------------------------------------------------------------------
